@@ -38,6 +38,8 @@ class SequentialAlgorithm:
         self.n = input_n
         array_index_temp = list(self.array_index)
 
+        #это слишком прямолинейно - обрабатывать контейнеры в порядке их записи
+        #а потому - не оптимально
         for group_size in self.n:
             if len(array_index_temp) != group_size:
                 index = self.calculation.index_of_min_vdegree(array_index_temp)
@@ -63,6 +65,7 @@ class SequentialAlgorithm:
         flag = True
         i = 0
 
+        #тоже - идёте по пути наименьшего сопртивления и обрабатываете группы в порядке записи
         for cur_group in self.subgraphs[:-1]:
             for vertex_1 in cur_group:
                 while vertexes or flag:
